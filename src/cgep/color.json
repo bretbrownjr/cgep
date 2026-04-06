@@ -1,0 +1,10 @@
+{
+    "template": "enum.hpp.j2",
+    "name": "Color",
+    "namespace": "cgep",
+    "enumerators": [
+        "red",
+        "green",
+        "blue"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "template": "options.hpp.j2",
+    "name": "Options",
+    "namespace": "cgep",
+    "options": [
+        {
+            "name": "file_name",
+            "type": "std::string",
+            "default": "\"input.txt\""
+        },
+        {
+            "name": "count",
+            "type": "int",
+            "default": "1"
+        }
+    ]
+}
