@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
+include(GNUInstallDirs)
 install(
     FILES
         target-version-sources-config.cmake
