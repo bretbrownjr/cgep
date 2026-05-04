@@ -3,10 +3,10 @@
 
 #include <cgep/version.hpp>
 
-namespace cgep {
+namespace @tvs_namespace@ {
 
 std::string version() noexcept {
     return "@tvs_version@";
 }
 
-} // namespace cgep
+} // namespace @tvs_namespace@
