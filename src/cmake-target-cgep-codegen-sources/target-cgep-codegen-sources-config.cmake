@@ -77,7 +77,7 @@ function(target_cgep_codegen_sources)
     VERBATIM
     CODEGEN
   )
-  message(VERBOSE "${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Generated command for \"${tccs_output_file}\".")
+  message(VERBOSE "${CMAKE_CURRENT_FUNCTION_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Generated command for \"${tccs_output_file}\".")
 
   target_sources("${tccs_target}"
     PUBLIC

@@ -9,12 +9,12 @@ function(target_version_sources)
   message(TRACE "${CMAKE_CURRENT_FUNCTION}: ARGN=\"${ARGN}\"")
   cmake_parse_arguments(tvs "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
   if (tvs_UNPARSED_ARGUMENTS)
-    message(FATAL_ERROR "${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Unknown arguments to target_version_sources(): \"${tvs_UNPARSED_ARGUMENTS}\"")
+    message(FATAL_ERROR "${CMAKE_CURRENT_FUNCTION_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Unknown arguments to target_version_sources(): \"${tvs_UNPARSED_ARGUMENTS}\"")
   endif()
 
   set(tvs_target ${tvs_TARGET})
   if (NOT tvs_TARGET)
-    message(FATAL_ERROR "${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: TARGET argument is required")
+    message(FATAL_ERROR "${CMAKE_CURRENT_FUNCTION_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: TARGET argument is required")
   endif()
   message(TRACE "${CMAKE_CURRENT_FUNCTION}: tvs_target=\"${tvs_target}\"")
 
@@ -23,7 +23,7 @@ function(target_version_sources)
   elseif(PROJECT_VERSION)
     set(tvs_version "${PROJECT_VERSION}")
   else()
-    message(FATAL_ERROR "${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: VERSION argument is required by target_version_sources() if PROJECT_VERSION is not set")
+    message(FATAL_ERROR "${CMAKE_CURRENT_FUNCTION_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: VERSION argument is required by target_version_sources() if PROJECT_VERSION is not set")
   endif()
   message(TRACE "${CMAKE_CURRENT_FUNCTION}: tvs_version=\"${tvs_version}\"")
 
@@ -58,7 +58,7 @@ function(target_version_sources)
     "${tvs_version_cpp}"
     @ONLY
   )
-  message(VERBOSE "${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Generated \"${tvs_version_cpp}\" from \"${tvs_version_cpp_template}\".")
+  message(VERBOSE "${CMAKE_CURRENT_FUNCTION_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Generated \"${tvs_version_cpp}\" from \"${tvs_version_cpp_template}\".")
 
   find_file(tvs_version_hpp_template
     "version.hpp.in"
@@ -74,7 +74,7 @@ function(target_version_sources)
     "${tvs_version_hpp}"
     @ONLY
   )
-  message(VERBOSE "${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Generated \"${tvs_version_hpp}\" from \"${tvs_version_hpp_template}\".")
+  message(VERBOSE "${CMAKE_CURRENT_FUNCTION_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}: Generated \"${tvs_version_hpp}\" from \"${tvs_version_hpp_template}\".")
 
   target_sources("${tvs_target}"
     PRIVATE
