@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
 #ifndef CGEP_CGEP_HPP
 #define CGEP_CGEP_HPP
 

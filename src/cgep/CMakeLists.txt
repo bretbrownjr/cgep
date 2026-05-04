@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
 add_library(cgep)
 add_library(cgep::cgep ALIAS cgep)
 target_sources(cgep

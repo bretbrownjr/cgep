@@ -1,3 +1,4 @@
+<!-- SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception -->
 # cgep
 
 cgep - Code Generation Example Project
